@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title>Page 38</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft00{font-size:12px;font-family:ZENJOE+GoogleSansText-Medium;color:#80868b;}
+	.ft01{font-size:17px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft02{font-size:17px;font-family:WGJRYK+GoogleSansText-Medium;color:#1967d2;}
+	.ft03{font-size:17px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft04{font-size:17px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft05{font-size:17px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft06{font-size:14px;font-family:WGJRYK+RobotoMono;color:#9334e6;}
+	.ft07{font-size:14px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft08{font-size:14px;font-family:WGJRYK+RobotoMono;color:#08177e;}
+	.ft09{font-size:14px;font-family:WGJRYK+RobotoMono;color:#c5221f;}
+	.ft010{font-size:14px;font-family:WGJRYK+RobotoMono;color:#0000ff;}
+	.ft011{font-size:14px;font-family:WGJRYK+RobotoMono;color:#188038;}
+	.ft012{font-size:14px;font-family:WGJRYK+GoogleSansText-Medium;color:#202124;}
+	.ft013{font-size:17px;line-height:26px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft014{font-size:17px;line-height:26px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page38-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="22365_3_Prompt Engineering_v7 (1)038.png" alt="background image"/>
+<p style="position:absolute;top:86px;left:108px;white-space:nowrap" class="ft00">Prompt&#160;Engineering</p>
+<p style="position:absolute;top:1076px;left:108px;white-space:nowrap" class="ft00">February&#160;2025</p>
+<p style="position:absolute;top:1076px;left:796px;white-space:nowrap" class="ft00">38</p>
+<p style="position:absolute;top:197px;left:108px;white-space:nowrap" class="ft01">To run this sample you must create a (free) SerpAPI key fro<a href="https://serpapi.com/manage-api-key">m&#160;</a></p>
+<p style="position:absolute;top:197px;left:566px;white-space:nowrap" class="ft02"><a href="https://serpapi.com/manage-api-key">https://serpapi.com/manage-</a></p>
+<p style="position:absolute;top:224px;left:108px;white-space:nowrap" class="ft02"><a href="https://serpapi.com/manage-api-key">api-key</a></p>
+<p style="position:absolute;top:224px;left:166px;white-space:nowrap" class="ft01">&#160;and set an environment variable&#160;</p>
+<p style="position:absolute;top:224px;left:415px;white-space:nowrap" class="ft03">SERPAPI_API_KEY</p>
+<p style="position:absolute;top:224px;left:558px;white-space:nowrap" class="ft01">.</p>
+<p style="position:absolute;top:278px;left:108px;white-space:nowrap" class="ft013">Next let’s write some Python code, with the task for the LLM to figure out:&#160;<i>How many children&#160;<br/>have a famous dad that performs in the band Metallica.</i></p>
+<p style="position:absolute;top:369px;left:126px;white-space:nowrap" class="ft05"><b>Python</b></p>
+<p style="position:absolute;top:418px;left:126px;white-space:nowrap" class="ft06">from</p>
+<p style="position:absolute;top:418px;left:160px;white-space:nowrap" class="ft07">&#160;langchain.agents&#160;</p>
+<p style="position:absolute;top:418px;left:314px;white-space:nowrap" class="ft06">import</p>
+<p style="position:absolute;top:418px;left:365px;white-space:nowrap" class="ft07">&#160;load_tools</p>
+<p style="position:absolute;top:437px;left:126px;white-space:nowrap" class="ft06">from</p>
+<p style="position:absolute;top:437px;left:160px;white-space:nowrap" class="ft07">&#160;langchain.agents&#160;</p>
+<p style="position:absolute;top:437px;left:314px;white-space:nowrap" class="ft06">import</p>
+<p style="position:absolute;top:437px;left:365px;white-space:nowrap" class="ft07">&#160;initialize_agent</p>
+<p style="position:absolute;top:456px;left:126px;white-space:nowrap" class="ft06">from</p>
+<p style="position:absolute;top:456px;left:160px;white-space:nowrap" class="ft07">&#160;langchain.agents&#160;</p>
+<p style="position:absolute;top:456px;left:314px;white-space:nowrap" class="ft06">import</p>
+<p style="position:absolute;top:456px;left:365px;white-space:nowrap" class="ft07">&#160;AgentType</p>
+<p style="position:absolute;top:476px;left:126px;white-space:nowrap" class="ft06">from</p>
+<p style="position:absolute;top:476px;left:160px;white-space:nowrap" class="ft07">&#160;langchain.llms&#160;</p>
+<p style="position:absolute;top:476px;left:297px;white-space:nowrap" class="ft06">import</p>
+<p style="position:absolute;top:476px;left:348px;white-space:nowrap" class="ft07">&#160;VertexAI</p>
+<p style="position:absolute;top:515px;left:126px;white-space:nowrap" class="ft08">prompt</p>
+<p style="position:absolute;top:515px;left:177px;white-space:nowrap" class="ft07">&#160;=&#160;</p>
+<p style="position:absolute;top:515px;left:203px;white-space:nowrap" class="ft09">&#34;How many kids do the band members of Metallica have?&#34;</p>
+<p style="position:absolute;top:554px;left:126px;white-space:nowrap" class="ft08">llm</p>
+<p style="position:absolute;top:554px;left:151px;white-space:nowrap" class="ft07">&#160;= VertexAI</p>
+<p style="position:absolute;top:554px;left:245px;white-space:nowrap" class="ft010">(</p>
+<p style="position:absolute;top:554px;left:254px;white-space:nowrap" class="ft08">temperature</p>
+<p style="position:absolute;top:554px;left:348px;white-space:nowrap" class="ft07">=</p>
+<p style="position:absolute;top:554px;left:357px;white-space:nowrap" class="ft011">0.1</p>
+<p style="position:absolute;top:554px;left:382px;white-space:nowrap" class="ft010">)</p>
+<p style="position:absolute;top:573px;left:126px;white-space:nowrap" class="ft08">tools</p>
+<p style="position:absolute;top:573px;left:168px;white-space:nowrap" class="ft07">&#160;= load_tools</p>
+<p style="position:absolute;top:573px;left:280px;white-space:nowrap" class="ft010">(</p>
+<p style="position:absolute;top:573px;left:288px;white-space:nowrap" class="ft011">[</p>
+<p style="position:absolute;top:573px;left:297px;white-space:nowrap" class="ft09">&#34;serpapi&#34;</p>
+<p style="position:absolute;top:573px;left:374px;white-space:nowrap" class="ft011">]</p>
+<p style="position:absolute;top:573px;left:382px;white-space:nowrap" class="ft07">,&#160;</p>
+<p style="position:absolute;top:573px;left:399px;white-space:nowrap" class="ft08">llm</p>
+<p style="position:absolute;top:573px;left:425px;white-space:nowrap" class="ft07">=</p>
+<p style="position:absolute;top:573px;left:434px;white-space:nowrap" class="ft08">llm</p>
+<p style="position:absolute;top:573px;left:459px;white-space:nowrap" class="ft010">)</p>
+<p style="position:absolute;top:612px;left:126px;white-space:nowrap" class="ft08">agent</p>
+<p style="position:absolute;top:612px;left:168px;white-space:nowrap" class="ft07">&#160;= initialize_agent</p>
+<p style="position:absolute;top:612px;left:331px;white-space:nowrap" class="ft010">(</p>
+<p style="position:absolute;top:612px;left:340px;white-space:nowrap" class="ft08">tools</p>
+<p style="position:absolute;top:612px;left:382px;white-space:nowrap" class="ft07">,&#160;</p>
+<p style="position:absolute;top:612px;left:399px;white-space:nowrap" class="ft08">llm</p>
+<p style="position:absolute;top:612px;left:425px;white-space:nowrap" class="ft07">, &#160;</p>
+<p style="position:absolute;top:632px;left:126px;white-space:nowrap" class="ft08">agent</p>
+<p style="position:absolute;top:632px;left:168px;white-space:nowrap" class="ft07">=AgentType.ZERO_SHOT_REACT_DESCRIPTION,&#160;</p>
+<p style="position:absolute;top:632px;left:511px;white-space:nowrap" class="ft08">verbose</p>
+<p style="position:absolute;top:632px;left:570px;white-space:nowrap" class="ft07">=</p>
+<p style="position:absolute;top:632px;left:579px;white-space:nowrap" class="ft010">True)</p>
+<p style="position:absolute;top:651px;left:126px;white-space:nowrap" class="ft08">agent</p>
+<p style="position:absolute;top:651px;left:168px;white-space:nowrap" class="ft07">.run</p>
+<p style="position:absolute;top:651px;left:203px;white-space:nowrap" class="ft010">(</p>
+<p style="position:absolute;top:651px;left:211px;white-space:nowrap" class="ft08">prompt</p>
+<p style="position:absolute;top:651px;left:263px;white-space:nowrap" class="ft010">)</p>
+<p style="position:absolute;top:713px;left:108px;white-space:nowrap" class="ft012">Snippet 1. Creating a ReAct Agent with LangChain and VertexAI</p>
+<p style="position:absolute;top:764px;left:108px;white-space:nowrap" class="ft014">Code Snippet 2 shows the result. Notice that ReAct makes a chain of five searches. In fact,&#160;<br/>the LLM is scraping Google search results to figure out the band names. Then, it lists the&#160;<br/>results as observations and chains the thought for the next search.</p>
+</div>
+</body>
+</html>

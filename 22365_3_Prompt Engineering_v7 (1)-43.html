@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title>Page 43</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft00{font-size:12px;font-family:ZENJOE+GoogleSansText-Medium;color:#80868b;}
+	.ft01{font-size:15px;font-family:WGJRYK+GoogleSansText-Medium;color:#000101;}
+	.ft02{font-size:15px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft03{font-size:15px;font-family:ZENJOE+GoogleSansText-Medium;color:#000101;}
+	.ft04{font-size:15px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft05{font-size:14px;font-family:WGJRYK+GoogleSansText-Medium;color:#202124;}
+	.ft06{font-size:17px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+	.ft07{font-size:15px;line-height:21px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft08{font-size:15px;line-height:29px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft09{font-size:15px;line-height:20px;font-family:WGJRYK+RobotoMono;color:#202124;}
+	.ft010{font-size:17px;line-height:26px;font-family:WGJRYK+GoogleSansText;color:#202124;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page43-div" style="position:relative;width:918px;height:1188px;">
+<img width="918" height="1188" src="22365_3_Prompt Engineering_v7 (1)043.png" alt="background image"/>
+<p style="position:absolute;top:86px;left:108px;white-space:nowrap" class="ft00">Prompt&#160;Engineering</p>
+<p style="position:absolute;top:1076px;left:108px;white-space:nowrap" class="ft00">February&#160;2025</p>
+<p style="position:absolute;top:1076px;left:796px;white-space:nowrap" class="ft00">43</p>
+<p style="position:absolute;top:204px;left:119px;white-space:nowrap" class="ft01">Name</p>
+<p style="position:absolute;top:204px;left:242px;white-space:nowrap" class="ft02">1_bash_rename_files_in_folder</p>
+<p style="position:absolute;top:232px;left:119px;white-space:nowrap" class="ft01">Goal</p>
+<p style="position:absolute;top:232px;left:242px;white-space:nowrap" class="ft02">Write a prompt to write code in Bash to rename files in a folder.</p>
+<p style="position:absolute;top:259px;left:119px;white-space:nowrap" class="ft01">Model</p>
+<p style="position:absolute;top:259px;left:242px;white-space:nowrap" class="ft02">gemini-pro</p>
+<p style="position:absolute;top:286px;left:119px;white-space:nowrap" class="ft01">Temperature</p>
+<p style="position:absolute;top:286px;left:242px;white-space:nowrap" class="ft02">0.1</p>
+<p style="position:absolute;top:286px;left:434px;white-space:nowrap" class="ft03">Token&#160;Limit</p>
+<p style="position:absolute;top:286px;left:638px;white-space:nowrap" class="ft02">1024</p>
+<p style="position:absolute;top:313px;left:119px;white-space:nowrap" class="ft03">Top-K</p>
+<p style="position:absolute;top:313px;left:242px;white-space:nowrap" class="ft02">N/A</p>
+<p style="position:absolute;top:313px;left:434px;white-space:nowrap" class="ft03">Top-P</p>
+<p style="position:absolute;top:313px;left:638px;white-space:nowrap" class="ft02">1</p>
+<p style="position:absolute;top:341px;left:119px;white-space:nowrap" class="ft03">Prompt</p>
+<p style="position:absolute;top:342px;left:242px;white-space:nowrap" class="ft07">Write a code snippet in Bash, which asks for a folder name.&#160;<br/>Then it takes the contents of the folder and renames all the&#160;<br/>files inside by prepending the name draft to the file name.</p>
+<p style="position:absolute;top:436px;left:119px;white-space:nowrap" class="ft03">Output</p>
+<p style="position:absolute;top:437px;left:242px;white-space:nowrap" class="ft07">```bash<br/>#!/bin/bash<br/># Ask for the folder name<br/>echo &#34;Enter the folder name: &#34;<br/>read&#160;folder_name<br/># Check if the folder exists<br/>if [ ! -d &#34;$folder_name&#34; ]; then<br/>echo &#34;Folder does not exist.&#34;<br/>exit&#160;1<br/>fi<br/># Get the list of files in the folder<br/>files=( &#34;$folder_name&#34;/* )<br/># Rename each file by prepending &#34;draft&#34; to the file name<br/>for file in &#34;${files[@]}&#34;; do<br/>new_file_name=&#34;draft_$(basename&#160;&#34;$file&#34;)&#34;<br/>mv&#160;&#34;$file&#34;&#160;&#34;$new_file_name&#34;<br/>done<br/>echo &#34;Files renamed successfully.&#34;<br/>```</p>
+<p style="position:absolute;top:899px;left:108px;white-space:nowrap" class="ft05">Table 16. Using Gemini to program code</p>
+<p style="position:absolute;top:950px;left:108px;white-space:nowrap" class="ft010">That seems like good code to me - it’s even documented! However, since LLMs can’t reason,&#160;<br/>and repeat training data, it’s essential to read and test your code first.&#160;</p>
+<p style="position:absolute;top:1031px;left:108px;white-space:nowrap" class="ft06">The moment we are all waiting for, does it really work?&#160;</p>
+</div>
+</body>
+</html>
